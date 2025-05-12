@@ -1,5 +1,77 @@
 /* Footer Styles */
 .footer {
+  background: #0a0a12;
+  color: white;
+  padding: 60px 20px 40px; /* Увеличиваем верхний padding (60px вместо 40px) */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  z-index: 1;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; /* Центрируем секции */
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  width: auto; /* Убираем фиксированную ширину */
+  padding: 0 20px; /* Добавляем отступы по бокам */
+}
+
+.footer-section h4 {
+  font-size: 1.5rem;
+  color: #3fa9f5;
+  margin-bottom: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 1rem;
+  color: #a0c4ff;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+    margin-top: auto; /* Прижимаем к низу */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 20px 0; /* Отступы сверху и снизу */
+    width: 100%; /* На всю ширину */
+    background: #0a0a12; /* Если нужен фон */
+    border-top: 1px solid #3fa9f5; /* Граница сверху как в вашем стиле */
+}
+
+.footer-bottom p {
+    margin: 0; /* Убираем отступы у параграфа */
+    color: #a0c4ff; /* Цвет текста как в вашем стиле */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}/* Footer Styles */
+.footer {
   background: #0a0a12; /* Темный фон */
   color: white;
   padding: 40px 20px;
@@ -11,7 +83,7 @@
 
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Элементы в футере сдвигаются в разные стороны */
+  justify-content: center; /* Центрируем секции */
   align-items: center;
   gap: 30px;
   margin-bottom: 40px;
@@ -19,7 +91,8 @@
 }
 
 .footer-section {
-  width: 45%;
+  width: auto; /* Убираем фиксированную ширину */
+  padding: 0 20px; /* Добавляем отступы по бокам */
 }
 
 .footer-section h4 {
@@ -61,15 +134,10 @@
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
-    text-align: center;
   }
 
   .footer-section {
     width: 100%;
     margin-bottom: 30px;
-  }
-
-  .footer-section .social-icons {
-    justify-content: center;
   }
 }
