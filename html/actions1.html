@@ -100,6 +100,26 @@
     }
     
     .back-button {
+        background: rgba(63, 169, 245, 0.1);
+        color: white;
+        border: 2px solid #3fa9f5;
+        padding: 12px 35px;
+        font-size: 1rem;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+    }
+    .back-button:hover {
+        background: rgba(63, 169, 245, 0.2);
+        transform: translateY(-3px);
+    }
+
+    .buy-button {
       background: rgba(63, 169, 245, 0.1);
       color: #3fa9f5;
       border: 2px solid #3fa9f5;
@@ -112,7 +132,7 @@
       letter-spacing: 1px;
     }
     
-    .back-button:hover {
+    .buy-button:hover {
       background: rgba(63, 169, 245, 0.2);
       transform: translateY(-3px);
     }
@@ -186,7 +206,7 @@
         
         <div class="product-actions">
           <button class="buy-button">Купить сейчас</button>
-          <button class="back-button">Вернуться к товарам</button>
+          <a href="../index.html" class="back-button">Вернуться к товарам</a>
         </div>
       </div>
     </div>
