@@ -1,0 +1,45 @@
+/* Logo */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .site-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  
+  .logo-text {
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+  }
+  
+  .logo-text .white {
+    color: white;
+  }
+  
+  .logo-text .blue {
+    color: #1e7abca9;
+  }
+
+  header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+  
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: var(--accent-glow);
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Вход — LootLabs</title>
+  <link rel="stylesheet" href="main.css"/>
+  <script type="module" src="scripts/login.js" defer></script>
+  <link rel="icon" href="icon.jpg" type="image/png">
+  <style>
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: var(--bg-color);
+      margin: 0;
+    }
+
+    .login-button {
+    background-color: rgb(89, 191, 255); /* светлее, чем 0.3 */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .login-button:hover {
+    background-color: rgb(55, 143, 197);
+  }
+
+    .login-form {
+      width: 100%;
+      max-width: 400px;
+      padding: 30px;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(89, 191, 255, 0.3);
+      text-align: center;
+    }
+
+    .login-form h1 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .logo-text {
+      font-family: 'Russo One', sans-serif;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .logo-text .white {
+      color: white;
+    }
+
+    .logo-text .purple {
+      color: var(--primary-color);
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .login-form button {
+      width: 100%;
+    }
+
+    .login-form p {
+      color: var(--muted-color);
+      margin-top: 20px;
+    }
+
+    .login-form a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      color: var(--muted-color);
+    }
+    
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid var(--muted-color);
+    }
+    
+    .divider::before {
+      margin-right: 10px;
+    }
+    
+    .divider::after {
+      margin-left: 10px;
+    }
+    
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      color: #444;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      font-weight: bold;
+    }
+    
+    .google-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-form">
+    <div class="logo-text">Twisty</div>
+    <h1>Вход</h1>
+    <form id="loginForm">
+      <input type="email" id="loginUsername" placeholder="Email" required />
+      <input type="password" id="loginPassword" placeholder="Пароль" required />
+      <button type="submit" class="login-button">Войти</button>
+    </form>
+    
+    <div class="divider">или</div>
+
+    <button id="googleSignIn" class="google-btn">
+      <img src="img/Google.svg" alt="Google logo">
+      Войти через Google
+    </button>
+    
+    <p>Нет аккаунта? <a href="registration.html">Зарегистрироваться</a></p>
+  </div>
+
+  <script type="module" src="script.js"></script>
+  <script src="console.js"></script>
+</body>
+</html>

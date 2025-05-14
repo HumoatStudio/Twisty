@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twisty | Техническая поддержка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/scroll.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/actions.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/footer.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/money.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/menu.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/logo.css'>
+    <script type="module" src="scripts/money.js"></script>
+    <script type="module" src="scripts/login.js"></script>
+    <script type="module" src="scripts/payment.js"></script>
+    <link rel="icon" href="icon.jpg" type="image/png">
+    <style>
+      .support-section {
+        background-color: #1a1a1a;
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 800px;
+        margin: 40px auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      .support-section h2 {
+        color: #3fa9f5;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      
+      .support-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      
+      .support-card {
+        background: #252525;
+        border-radius: 15px;
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      }
+      
+      .support-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 50px rgba(63, 169, 245, 0.3);
+      }
+      
+      .support-card h3 {
+        color: #3fa9f5;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+      
+      .support-card p {
+        color: #ccc;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      
+      .support-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #3fa9f5, #2c77ad);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: transform 0.2s ease;
+      }
+      
+      .support-btn:hover {
+        transform: scale(1.05);
+      }
+      
+      .faq-item {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 20px;
+      }
+      
+      .faq-question {
+        color: #3fa9f5;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .faq-answer {
+        color: #ccc;
+        margin-top: 10px;
+        display: none;
+      }
+      
+      .faq-answer.show {
+        display: block;
+      }
+      
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .form-group label {
+        margin-bottom: 8px;
+        color: #a259ff;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        background: #252525;
+        color: white;
+      }
+      
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+      
+      .submit-btn {
+        background: linear-gradient(135deg, #6f42c1, #a259ff);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+      
+      .submit-btn:hover {
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body>    
+    <header>
+      <div class="dark-money-counter">
+        <div class="dark-money-amount">0</div>
+        <div class="dark-currency">₽</div>
+        <button id="topUpBalance" class="top-up-btn">Пополнить</button>
+      </div>
+
+      <a href="index.html" class="cta-button">Главнаяя</a>
+    </header>
+    
+    <header class="site-header">
+      <div class="logo-container" onclick="togglePanel()">
+          <img src="icon.jpg" alt="Twisty" class="site-logo">
+          <span class="logo-text">Twisty</span>
+      </div>
+    
+      <div class="logo-panel" id="logoPanel">
+          <ul>
+              <li><a href="login.html">Вход</a></li>
+              <li><a href="registration.html">Регистрация</a></li>
+              <li><a href="support.html">Тех. Поддержка</a></li>
+          </ul>
+      </div>
+    </header>
+
+    <section class="support-section">
+      <h2>Как мы можем вам помочь?</h2>
+      
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Проблемы с оплатой</h3>
+          <p>Если у вас возникли проблемы с оплатой товаров или кейсов, наша команда готова помочь вам разобраться в ситуации.</p>
+          <a href="#payment-help" class="support-btn">Получить помощь</a>
+        </div>
+        
+        <div class="support-card">
+          <h3>Технические проблемы</h3>
+          <p>Ошибки на сайте, проблемы с отображением контента или другие технические неполадки - сообщите нам о них.</p>
+          <a href="#technical-help" class="support-btn">Сообщить о проблеме</a>
+        </div>
+        
+        <div class="support-card">
+          <h3>Вопросы по аккаунту</h3>
+          <p>Проблемы с входом, восстановлением пароля или другие вопросы, связанные с вашим аккаунтом.</p>
+          <a href="#account-help" class="support-btn">Решить проблему</a>
+        </div>
+        
+        <div class="support-card">
+          <h3>Другие вопросы</h3>
+          <p>У вас есть вопросы, не вошедшие в другие категории? Мы с радостью на них ответим.</p>
+          <a href="#contact-form" class="support-btn">Задать вопрос</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="support-section" id="faq">
+      <h2>Часто задаваемые вопросы</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Как восстановить доступ к аккаунту?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Если вы забыли пароль, воспользуйтесь функцией восстановления пароля на странице входа. Если у вас нет доступа к привязанной почте, свяжитесь с нашей поддержкой через форму ниже.
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Почему моя оплата не прошла?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Это может быть связано с ограничениями вашего банка, недостатком средств на счету или техническими проблемами на стороне платежной системы. Попробуйте повторить платеж через некоторое время или используйте другой способ оплаты.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Можно ли вернуть деньги за покупку?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Возврат средств возможен в случае ошибки списания или технической неисправности. Пожалуйста, обратитесь в поддержку для рассмотрения вашего запроса.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Могу ли я подарить предмет другому пользователю?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          На данный момент прямой передачи предметов между пользователями нет. Следите за обновлениями — мы работаем над этой функцией.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Можно ли вывести деньги, если я уже пополнил баланс?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          Средства, зачисленные на баланс, не подлежат выводу. Пополнение предназначено исключительно для использования внутри платформы (покупка кейсов, предметов и других услуг).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleAnswer(this)">
+          Могу ли я удалить свой аккаунт?
+          <span>+</span>
+        </div>
+        <div class="faq-answer">
+          В данный момент функция удаления аккаунта недоступна. Мы планируем добавить эту возможность в будущих обновлениях.
+        </div>
+      </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; Twisty Shop ©2025 Все права защищены</p>
+        </div>
+    </footer>    
+
+    <script>
+      // Показ/скрытие панели при клике на логотип
+      function togglePanel() {
+        const panel = document.getElementById('logoPanel');
+        panel.classList.toggle('show');
+      }
+      
+      // Закрытие панели при клике вне её области
+      document.addEventListener('click', function(event) {
+        const panel = document.getElementById('logoPanel');
+        const logoContainer = document.querySelector('.logo-container');
+        
+        if (!panel.contains(event.target) && !logoContainer.contains(event.target)) {
+          panel.classList.remove('show');
+        }
+      });
+      
+      // Анимация загрузки
+      window.addEventListener('load', function() {
+        const loader = document.querySelector('.loader');
+        setTimeout(function() {
+          loader.style.opacity = '0';
+          setTimeout(function() {
+            loader.style.display = 'none';
+          }, 500);
+        }, 1500);
+      });
+      
+      // Функция для раскрытия/скрытия ответов FAQ
+      function toggleAnswer(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector('span');
+        
+        answer.classList.toggle('show');
+        icon.textContent = answer.classList.contains('show') ? '-' : '+';
+      }
+    </script>
+    <script src="console.js"></script>
+  </body>
+</html>

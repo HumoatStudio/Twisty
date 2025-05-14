@@ -8,12 +8,42 @@
   <link rel='stylesheet' type='text/css' media='screen' href='styles/scroll.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='styles/actions.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='styles/footer.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles/money.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles/menu.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='styles/logo.css'>
+  <script type="module" src="scripts/money.js"></script>
+  <script type="module" src="scripts/login.js"></script>
+  <script type="module" src="scripts/payment.js"></script>
   <link rel="icon" href="icon.jpg" type="image/png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500;700&display=swap');
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="dark-money-counter">
+      <div class="dark-money-amount">0</div>
+      <div class="dark-currency">₽</div>
+      <button id="topUpBalance" class="top-up-btn">Пополнить</button>
+    </div>
+  </header>
+
+  <header class="site-header">
+      <div class="logo-container" onclick="togglePanel()">
+          <img src="icon.jpg" alt="Twisty Logo" class="site-logo">
+          <span class="logo-text">Twisty</span>
+      </div>
+    
+      <div class="logo-panel" id="logoPanel">
+          <ul>
+              <li><a href="login.html">Вход</a></li>
+              <li><a href="registration.html">Регистрация</a></li>
+              <li><a href="Support.html">Тех. Поддержка</a></li>
+          </ul>
+      </div>
+    </header>
+
   <div class="background-animation">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -32,7 +62,7 @@
       <h1>TWISTY</h1>
       <p class="description">Закажи собственный <span class="highlight">CRMP mobile проект</span></p>
       <p class="description">Лучший магазин для покупки CRMP на заказ!<br>Быстро, качественно, безопасно</p>
-      <button class="cta-button">ПОДРОБНЕЕ</button>
+      <a href="#products" class="cta-button">ПОДРОБНЕЕ</a>
     </div>
   </div>
   
@@ -55,7 +85,7 @@
         </div>
     </div>
     <!-- Section for products below -->
-    <div class="products">
+    <div id="products" class="products">
         <h3>Наши товары</h3>
         <div class="product-list">
             <div class="product-item">
@@ -83,11 +113,19 @@
                 <button class="buy-button">Купить</button>
             </div>
             <div class="product-item">
-                <img src="img/action3.jpg" alt="Product 2">
+                <img src="img/action3.jpg" alt="Product 4">
                 <p>BRILLIANT RP ELITE</p>
                 <p class="price">Цена: 400₽</p>
                 <p class="mini-description">Индивидуальный стиль и удобство.</p>
                 <a href="html/actions4.html" class="cta-button">Подробнее</a>
+                <button class="buy-button">Купить</button>
+            </div>
+            <div class="product-item">
+                <img src="img/action4.jpg" alt="Product 5">
+                <p>Суровая Россия</p>
+                <p class="price">Цена: 100₽</p>
+                <p class="mini-description">Индивидуальный стиль и удобство.</p>
+                <a href="html/actions5.html" class="cta-button">Подробнее</a>
                 <button class="buy-button">Купить</button>
             </div>
         </div>
@@ -101,6 +139,6 @@
         </div>
     </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </body>
 </html>

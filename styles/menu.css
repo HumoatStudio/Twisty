@@ -1,0 +1,60 @@
+.logo-panel {
+    display: none;
+    position: absolute;
+    top: 60px; /* или 80px, если header выше */
+    left: 20px;
+    background-color: #051017;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+.logo-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo-panel li {
+    margin: 10px 0;
+}
+
+.logo-panel a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logo-panel a:hover {
+    color: #1e7abc;
+}
+
+.logo-panel.show {
+    display: block;
+}
+
+.site-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.site-logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo-text {
+    margin-left: 10px;
+}

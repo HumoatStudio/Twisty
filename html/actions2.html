@@ -7,6 +7,11 @@
   <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='../styles/scroll.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='../styles/footer.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/money.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='../styles/logo.css'>
+  <script type="module" src="../scripts/money.js"></script>
+  <script type="module" src="../scripts/login.js"></script>
+  <script type="module" src="../scripts/payment.js"></script>
   <link rel="icon" href="../icon.jpg" type="image/png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto:wght@400;500;700&display=swap');
@@ -158,6 +163,15 @@
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="dark-money-counter">
+      <div class="dark-money-amount">0</div>
+      <div class="dark-currency">₽</div>
+      <button id="topUpBalance" class="top-up-btn">Пополнить</button>
+    </div>
+  </header>
+  
   <div class="background-animation">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -219,5 +233,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="console.js"></script>
 </body>
 </html>

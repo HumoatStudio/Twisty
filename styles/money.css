@@ -1,0 +1,79 @@
+  /* Money */
+
+  /* Тёмный счётчик с чёрной основой */
+.dark-money-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.2em;
+  background: #0a0a0a;
+  padding: 14px 22px;
+  border-radius: 50px;
+  border: 2px solid #2a2a2a;
+  box-shadow: 0 0 10px #3fa9f538, 0 0 20px #3fa9f526;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Тёмная сумма */
+.dark-money-amount {
+  color: #e0e0e0;
+  font-weight: bold;
+  text-shadow: 0 0 10px #3fa9f5, 0 0 20px #3fa9f5;
+  letter-spacing: 1px;
+}
+
+/* Символ рубля */
+.dark-currency {
+  color: #3fa9f5;
+  font-weight: bold;
+  text-shadow: 0 0 10px #3fa9f5, 0 0 20px #3fa9f5;;
+}
+
+/* Эффект рамки при наведении */
+.dark-money-counter:hover {
+  border-color: #3a3a3a;
+  box-shadow: 0 0 10px #3fa9f5, 0 0 20px #3fa9f5;
+}
+
+/* Акцентная полоска */
+.dark-money-counter::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, 
+              transparent, 
+              var(--primary-color), 
+              transparent);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.dark-money-counter:hover::after {
+  width: 80%;
+  opacity: 1;
+}
+
+/* Стили для пополнения баланса */
+.top-up-btn {
+  background-color: #1e7abca9;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.top-up-btn:hover {
+  background-color: #3fa9f5c5;
+}

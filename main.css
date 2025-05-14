@@ -16,6 +16,32 @@
       -webkit-overflow-scrolling: touch; /* плавная прокрутка для iOS */
     }
 
+    .hero {
+      height: 100vh;
+      width: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('img/bg.png');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+  
+  .hero {
+  position: relative;
+  }
+
     .background-animation {
       position: absolute;
       top: 0;
@@ -282,4 +308,31 @@
   .cursor {
     display: none;
   }
+}
+
+.stock-status {
+  color: green;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.stock-status-no {
+  color: red;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.logout-btn {
+  background-color: rgba(89, 191, 255, 0.827);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: rgb(89, 191, 255);
 }
