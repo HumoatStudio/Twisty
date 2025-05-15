@@ -18,6 +18,10 @@ import {
   onSnapshot 
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
+import {
+  GithubAuthProvider, // Добавь это
+} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyDvkN1g99it3Pi3ctjFG9z829Zwb_RPlqQ",
   authDomain: "twisty-e7978.firebaseapp.com",
@@ -159,6 +163,30 @@ if (facebookSignInBtn) {
         alert('Аккаунт уже существует с другими учетными данными.');
       } else {
         alert("Ошибка при входе через Facebook: " + error.message);
+      }
+    }
+  });
+}
+
+// Вставь этот код после обработчиков Google и Facebook:
+const githubSignInBtn = document.getElementById("GitHubSignIn");
+
+if (githubSignInBtn) {
+  githubSignInBtn.addEventListener("click", async function () {
+    const provider = new GithubAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log("Успешный вход через GitHub:", user);
+      alert("Вы успешно вошли через GitHub!");
+      window.location.href = "index.html";
+    } catch (error) {
+      console.error("Ошибка входа через GitHub:", error.code, error.message);
+      if (error.code === 'auth/account-exists-with-different-credential') {
+        alert('Аккаунт уже существует с другими учетными данными.');
+      } else {
+        alert("Ошибка при входе через GitHub: " + error.message);
       }
     }
   });

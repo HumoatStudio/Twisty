@@ -127,27 +127,68 @@
       height: 20px;
       margin-right: 10px;
     }
-  </style>
+    
+
+    .GameCenter-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(45, 45, 45);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      font-weight: bold;
+    }
+    
+    .GitHub-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    .GitHub-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(31, 31, 31);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      font-weight: bold;
+    }
+    
+    .GameCenter-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+    </style>
 </head>
 <body>
 
   <div class="login-form">
     <div class="logo-text">Twisty</div>
     <h1>Вход</h1>
-    <form id="loginForm">
-      <input type="email" id="loginUsername" placeholder="Email" required />
-      <input type="password" id="loginPassword" placeholder="Пароль" required />
-      <button type="submit" class="login-button">Войти</button>
-    </form>
-    
-    <div class="divider">или</div>
 
     <button id="googleSignIn" class="google-btn">
       <img src="img/Google.svg" alt="Google logo">
       Войти через Google
     </button>
-    
-    <p>Нет аккаунта? <a href="registration.html">Зарегистрироваться</a></p>
+    <button id="GitHubSignIn" class="GitHub-btn">
+      <img src="img/GitHub.png" alt="GitHub logo">
+      Войти через GitHub
+    </button>
+    <!-- <button id="GameCenterSignIn" class="GameCenter-btn">
+      <img src="img/Game Center.png" alt="GameCenter logo">
+      Войти через Game Center
+    </button> -->
   </div>
 
   <script type="module" src="script.js"></script>
