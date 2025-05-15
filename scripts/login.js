@@ -214,7 +214,6 @@ function updateAuthPanel(user) {
     logoPanel.innerHTML = `
       <ul>
         <li><a href="login.html">Вход</a></li>
-        <li><a href="registration.html">Регистрация</a></li>
         <li><a href="#">Тех. Поддержка</a></li>
       </ul>
     `;
