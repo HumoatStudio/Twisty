@@ -6,7 +6,6 @@ import {
   getAuth, 
   signInWithEmailAndPassword,
   GoogleAuthProvider,
-  FacebookAuthProvider,
   signInWithPopup,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
@@ -19,7 +18,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 import {
-  GithubAuthProvider, // Добавь это
+  GithubAuthProvider,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -142,33 +141,7 @@ if (googleSignInBtn) {
   });
 }
 
-// Авторизация через Facebook
-const facebookSignInBtn = document.getElementById("facebookSignIn");
-
-if (facebookSignInBtn) {
-  facebookSignInBtn.addEventListener("click", async function() {
-    const provider = new FacebookAuthProvider();
-    provider.addScope('email');
-    provider.addScope('public_profile');
-    
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log("Успешный вход через Facebook:", user);
-      alert("Вы успешно вошли через Facebook!");
-      window.location.href = "index.html";
-    } catch (error) {
-      console.error("Ошибка входа через Facebook:", error.code, error.message);
-      if (error.code === 'auth/account-exists-with-different-credential') {
-        alert('Аккаунт уже существует с другими учетными данными.');
-      } else {
-        alert("Ошибка при входе через Facebook: " + error.message);
-      }
-    }
-  });
-}
-
-// Вставь этот код после обработчиков Google и Facebook:
+// Авторизация через GitHub
 const githubSignInBtn = document.getElementById("GitHubSignIn");
 
 if (githubSignInBtn) {

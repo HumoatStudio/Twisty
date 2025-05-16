@@ -1,113 +1,226 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Вход — LootLabs</title>
-  <link rel="stylesheet" href="main.css"/>
-  <script type="module" src="scripts/login.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="scripts/money.js"></script>
+  <script type="module" src="scripts/login.js"></script>
   <link rel="icon" href="icon.jpg" type="image/png">
+  <title>Вход — Twisty</title>
   <style>
-
     body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
       display: flex;
+      height: 100vh;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    .image-section {
+      flex: 1;
+      background: url('img/bg.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .image-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .image-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+      max-width: 80%;
+    }
+
+    .image-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .image-content p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    .login-section {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: var(--bg-color);
-      margin: 0;
+      padding: 40px;
+      background: linear-gradient(to right, #191B20, #2C2F36);
+      box-shadow: -5px 0 15px rgba(0,0,0,0.3);
     }
 
-    .login-button {
-    background-color: rgb(89, 191, 255); /* светлее, чем 0.3 */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: #000;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-
-  .login-button:hover {
-    background-color: rgb(55, 143, 197);
-  }
-
-    .login-form {
+    .login-container {
       width: 100%;
-      max-width: 400px;
-      padding: 30px;
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(89, 191, 255, 0.3);
+      max-width: 320px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
       text-align: center;
+      color: #59bfff;
     }
 
-    .login-form h1 {
-      font-family: 'Russo One', sans-serif;
-      font-size: 2em;
-      margin-bottom: 20px;
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #aaa;
+      font-weight: normal;
     }
 
-    .logo-text {
-      font-family: 'Russo One', sans-serif;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    .logo-text .white {
-      color: white;
-    }
-
-    .logo-text .purple {
-      color: var(--primary-color);
-    }
-
-    .login-form input {
+    .input-field {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
+      padding: 14px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #2a2a2a;
+      color: #e0e0e0;
+      transition: border 0.3s;
+    }
+
+    .input-field:focus {
       outline: none;
+      border-color: #59bfff;
     }
 
-    .login-form button {
+    .continue-btn {
       width: 100%;
+      padding: 14px;
+      background-color: #59bfff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      transition: background 0.3s;
     }
 
-    .login-form p {
-      color: var(--muted-color);
-      margin-top: 20px;
+    .continue-btn:hover {
+      background-color: #47a8e5;
     }
 
-    .login-form a {
-      color: var(--primary-color);
+    .create-account {
+      text-align: center;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .create-account a {
+      color: #59bfff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .create-account a:hover {
+      color: #47a8e5;
       text-decoration: underline;
     }
-    
+
     .divider {
+      text-align: center;
+      margin: 1.5rem 0;
+      color: #555;
+      position: relative;
+      font-size: 0.9rem;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 1px;
+      background: #333;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .social-btn {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 0.8rem;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background: #2a2a2a;
       display: flex;
       align-items: center;
-      margin: 20px 0;
-      color: var(--muted-color);
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: #e0e0e0;
+      transition: all 0.3s;
     }
-    
-    .divider::before, .divider::after {
-      content: "";
-      flex: 1;
-      border-bottom: 1px solid var(--muted-color);
+
+    .social-btn:hover {
+      background: #333;
+      border-color: #444;
     }
-    
-    .divider::before {
+
+    .social-btn img {
+      width: 20px;
+      height: 20px;
       margin-right: 10px;
     }
-    
-    .divider::after {
-      margin-left: 10px;
+
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 0.7rem;
+      color: #555;
+      text-align: center;
+      line-height: 1.5;
     }
-    
-    .google-btn {
+
+    .footer a {
+      color: #777;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #59bfff;
+    }
+
+    .language-selector {
+      margin-top: 1rem;
+      color: #777;
+      font-size: 0.8rem;
+    }
+
+      .google-btn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,23 +240,7 @@
       height: 20px;
       margin-right: 10px;
     }
-    
 
-    .GameCenter-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgb(45, 45, 45);
-      color: #ffffff;
-      border-radius: 8px;
-      padding: 10px;
-      margin: 10px 0;
-      cursor: pointer;
-      border: none;
-      width: 100%;
-      font-weight: bold;
-    }
-    
     .GitHub-btn img {
       width: 20px;
       height: 20px;
@@ -153,7 +250,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgb(31, 31, 31);
+      background: linear-gradient(to right, #17181c, #181a1e);
       color: #ffffff;
       border-radius: 8px;
       padding: 10px;
@@ -163,21 +260,21 @@
       width: 100%;
       font-weight: bold;
     }
-    
-    .GameCenter-btn img {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-    }
-    </style>
+  </style>
 </head>
 <body>
+  <div class="image-section">
+    <div class="image-content">
+      <h2>Twisty Official</h2>
+      <p>Закажи собственный <span class="highlight">CRMP mobile проект</span></p>
+    </div>
+  </div>
 
-  <div class="login-form">
-    <div class="logo-text">Twisty</div>
-    <h1>Вход</h1>
-
-    <button id="googleSignIn" class="google-btn">
+  <div class="login-section">
+    <div class="login-container">
+      <div class="logo">Twisty</div>
+      <h1>Войдите, чтобы продолжить</h1>
+      <button id="googleSignIn" class="google-btn">
       <img src="img/Google.svg" alt="Google logo">
       Войти через Google
     </button>
@@ -185,13 +282,7 @@
       <img src="img/GitHub.png" alt="GitHub logo">
       Войти через GitHub
     </button>
-    <!-- <button id="GameCenterSignIn" class="GameCenter-btn">
-      <img src="img/Game Center.png" alt="GameCenter logo">
-      Войти через Game Center
-    </button> -->
+    </div>
   </div>
-
-  <script type="module" src="script.js"></script>
-  <script src="console.js"></script>
 </body>
 </html>
